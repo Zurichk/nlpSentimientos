@@ -13,11 +13,8 @@ ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=development
 ENV FLASK_DEBUG=True
 
-RUN apt-get update && apt-get install -y python3-dev gcc libc-dev musl-dev linux-headers
-RUN apt-get install -y zlib1g-dev libjpeg-dev
-#RUN pip install --no-cache-dir --upgrade -r /usr/src/app/requirements.txt
+RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
-#RUN pip install -r requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
