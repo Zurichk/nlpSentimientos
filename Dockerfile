@@ -1,5 +1,5 @@
 FROM python:3.10.0-alpine
-#FROM python:3.8-alpine
+#FROM python:3-alpine
 
 RUN mkdir /usr/src/app/
 COPY ./code /usr/src/app/
@@ -16,6 +16,7 @@ ENV FLASK_DEBUG=True
 RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir spacy 
 
 EXPOSE 5000
 
