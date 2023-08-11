@@ -1,4 +1,4 @@
-FROM python:3.10.0-slim-buster
+FROM python:3.10.0-alpine
 #FROM python:3.10.0rc2-buster
 
 RUN mkdir /usr/src/app/
