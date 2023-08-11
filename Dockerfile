@@ -1,5 +1,6 @@
 #FROM python:3.10.0-alpine
-FROM python:3.10.0rc2-buster
+#FROM python:3.10.0rc2-buster
+FROM debian:bullseye-slim
 
 RUN mkdir /usr/src/app/
 COPY ./code /usr/src/app/
