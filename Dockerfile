@@ -17,7 +17,11 @@ RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install -U pip setuptools wheel
-RUN pip install --no-cache-dir spacy
+RUN git clone https://github.com/explosion/spaCy
+RUN cd spaCy
+RUN pip install -r requirements.txt
+RUN pip install --no-build-isolation --editable .
+
 
 EXPOSE 5000
 
