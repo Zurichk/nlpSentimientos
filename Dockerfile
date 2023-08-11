@@ -16,7 +16,8 @@ ENV FLASK_DEBUG=True
 RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN pip install --no-cache-dir spacy 
+RUN pip install -U pip setuptools wheel
+RUN pip install --no-cache-dir spacy
 
 EXPOSE 5000
 
