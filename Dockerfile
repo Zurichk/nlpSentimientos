@@ -15,13 +15,18 @@ ENV FLASK_DEBUG=True
 
 RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
+# spacy
+RUN \
+    pip3 install -U jieba \
+        ipython \
+        numpy \
+        pandas \
+        requests \
+        chardet \
+    && pip3 install -U spacy==${SPACY_VERSION} \
+    && python3 -m spacy download en
+    
 RUN pip install -r requirements.txt
-RUN pip install -U pip setuptools wheel
-RUN git clone https://github.com/explosion/spaCy
-RUN cd spaCy
-RUN pip install -r requirements.txt
-RUN pip install --no-build-isolation --editable .
-
 
 EXPOSE 5000
 
