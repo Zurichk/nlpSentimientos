@@ -1,4 +1,4 @@
-FROM python:3.10.0-alpine
+FROM python:3.10.0-slim
 #FROM python:3.10.0rc2-buster
 
 RUN mkdir /usr/src/app/
@@ -13,7 +13,11 @@ ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=development
 ENV FLASK_DEBUG=True
 
-RUN apk update && apk add python3-dev gcc libc-dev linux-headers
+#RUN apk update && apk add python3-dev gcc libc-dev linux-headers
+RUN apt-get update
+RUN apt-get install -y build-essential python-dev git
+
+RUN pip3 install --upgrade pip setuptools
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
