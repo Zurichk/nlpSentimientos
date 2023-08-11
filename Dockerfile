@@ -15,8 +15,7 @@ ENV FLASK_DEBUG=True
 
 RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
-RUN pip3 install --no-cache-dir pysentimiento
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
