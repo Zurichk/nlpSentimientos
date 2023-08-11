@@ -1,5 +1,5 @@
 #FROM python:3.10.0-alpine
-FROM python:3.10.8-bullseye
+FROM python:3.10.0rc2-buster
 
 RUN mkdir /usr/src/app/
 COPY ./code /usr/src/app/
