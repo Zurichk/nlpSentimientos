@@ -1,0 +1,17 @@
+git config --global user.name "Zurichk"
+git config --global user.email zurich85aep@gmail.com
+
+git init
+git add .
+git commit -m "comentario"
+git push
+
+echo "# bctranslation" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Zurichk/nlpSentimientos.git
+git push -u origin main
+
+subir a render

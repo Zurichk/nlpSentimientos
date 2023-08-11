@@ -1,0 +1,35 @@
+~~~~~~~~~~~~~~~~~~ Creamos el entorno ~~~~~~~~~~~~~~~~~~:
+py -m venv nlpConSpaCy
+
+Activamos el entorno:
+.\nlpConSpaCy\Scripts\activate
+
+pip freeze > requirements.txt
+python -m pip install -r requirements.txt
+python.exe -m pip install --upgrade pip
+
+~~~~~~~~~~~~~~~~~~ Algunas instalaciones ~~~~~~~~~~~~~~~~~~:
+pip install python-multipart
+pip install spacy
+python -m spacy download en_core_web_trf
+python -m spacy download es_dep_news_trf
+
+python -m spacy download es_core_news_md
+python -m spacy download en_core_web_md
+
+~~~~~~~~~~~~~~~~~~Lanzar Flask ( Desde la carpeta donde esta el codigo [code]) ~~~~~~~~~~~~~~~~~~:
+set FLASK_APP=app
+set FLASK_ENV=development
+flask run
+flask run --host=0.0.0.0 --port=5001
+
+~~~~~~~~~~~~~~~~~~ Textos de prueba ~~~~~~~~~~~~~~~~~~:
+"""Texto de prueba Español:
+Adrián García estuvo en Madrid y visitó la tienda Apple, el pasado jueves 02 de Marzo de 2022, y fue atendido por Charles, que hablaba en ingles, durante 2 horas, y se gastó unos 600 euros en un Iphone 10. 
+Por la tarde, se fue a pasear por el parque del Retiro y estuvo con Miguel Pérez durante 3 horas. Los 2 estaban muy felices.
+"""
+"""
+Test text Ingles:
+Adrián García was in Madrid and visited the Apple store, last Thursday, March 02, 2022, and was attended by Charles, who spoke in english, for 2 hours, and spent about 600 euros on an Iphone 10. 
+In the afternoon, He went for a walk in the Retiro park and was with Miguel Pérez for 3 hours. The 2 were very happy.
+"""
