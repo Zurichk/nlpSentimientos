@@ -15,8 +15,8 @@ ENV FLASK_DEBUG=True
 
 RUN apk update && apk add python3-dev gcc libc-dev linux-headers
 RUN pip install --upgrade pip
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-#CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
